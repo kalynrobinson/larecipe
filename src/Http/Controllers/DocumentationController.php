@@ -2,8 +2,8 @@
 
 namespace BinaryTorch\LaRecipe\Http\Controllers;
 
-use Illuminate\Support\Facades\Gate;
 use BinaryTorch\LaRecipe\DocumentationRepository;
+use Illuminate\Support\Facades\Gate;
 
 class DocumentationController extends Controller
 {
@@ -39,8 +39,9 @@ class DocumentationController extends Controller
     /**
      * Show a documentation page.
      *
-     * @param  string $version
-     * @param  string|null $page
+     * @param string      $version
+     * @param string|null $page
+     *
      * @return Response
      */
     public function show($version, $page = null)

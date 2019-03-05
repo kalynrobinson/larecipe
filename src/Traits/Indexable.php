@@ -8,6 +8,7 @@ trait Indexable
 {
     /**
      * @param  $version
+     *
      * @return mixed
      */
     public function index($version)
@@ -16,15 +17,16 @@ trait Indexable
             $pages = $this->getPages($version);
 
             $result = [];
-            foreach($pages as $page) {
+            foreach ($pages as $page) {
                 $page = explode('{{version}}', $page)[1];
                 $pageContent = $this->get($version, $page);
 
-                if(! $pageContent)
+                if (!$pageContent) {
                     continue;
+                }
 
                 $indexableNodes = implode(',', config('larecipe.search.engines.internal.index'));
-                
+
                 $nodes = (new Crawler($pageContent))
                         ->filter($indexableNodes)
                         ->each(function (Crawler $node, $i) {
@@ -36,11 +38,11 @@ trait Indexable
                         ->each(function (Crawler $node, $i) {
                             return $node->text();
                         });
-                
+
                 $result[] = [
                     'path'     => $page,
                     'title'    => $title ? $title[0] : '',
-                    'headings' => $nodes
+                    'headings' => $nodes,
                 ];
             }
 
@@ -50,6 +52,7 @@ trait Indexable
 
     /**
      * @param  $version
+     *
      * @return mixed
      */
     protected function getPages($version)

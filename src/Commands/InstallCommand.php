@@ -2,9 +2,9 @@
 
 namespace BinaryTorch\LaRecipe\Commands;
 
+use BinaryTorch\LaRecipe\LaRecipeServiceProvider;
 use Illuminate\Console\Command;
 use Symfony\Component\Process\Process;
-use BinaryTorch\LaRecipe\LaRecipeServiceProvider;
 
 class InstallCommand extends Command
 {

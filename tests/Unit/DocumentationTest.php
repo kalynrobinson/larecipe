@@ -2,10 +2,10 @@
 
 namespace BinaryTorch\LaRecipe\Tests\Unit;
 
+use BinaryTorch\LaRecipe\Models\Documentation;
+use BinaryTorch\LaRecipe\Tests\TestCase;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
-use BinaryTorch\LaRecipe\Tests\TestCase;
-use BinaryTorch\LaRecipe\Models\Documentation;
 
 class DocumentationTest extends TestCase
 {
@@ -34,7 +34,7 @@ class DocumentationTest extends TestCase
             $this->documentation->replaceLinks('1.1', 'the current version is {{version}} and the route is /{{route}}')
         );
     }
-    
+
     /** @test */
     public function it_caches_the_requested_documentation_and_index_for_a_given_period()
     {
@@ -57,7 +57,7 @@ class DocumentationTest extends TestCase
     /** @test */
     public function it_can_compile_blade_content()
     {
-        $bladeContent = "{{ csrf_field() }}";
+        $bladeContent = '{{ csrf_field() }}';
         $this->assertEquals('<?php echo e(csrf_field()); ?>', $this->documentation->compileBlade($bladeContent));
     }
 

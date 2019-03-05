@@ -16,7 +16,8 @@ class Cache
     /**
      * Create a new documentation instance.
      *
-     * @param  Repository  $cache
+     * @param Repository $cache
+     *
      * @return void
      */
     public function __construct(Repository $cache)
@@ -27,13 +28,14 @@ class Cache
     /**
      * Wrapper.
      *
-     * @param  \Closure  $callback
-     * @param  string  $key
+     * @param \Closure $callback
+     * @param string   $key
+     *
      * @return void
      */
     public function remember(\Closure $callback, $key)
     {
-        if (! config('larecipe.cache.enabled')) {
+        if (!config('larecipe.cache.enabled')) {
             return $callback();
         }
 

@@ -2,9 +2,9 @@
 
 namespace BinaryTorch\LaRecipe\Tests\Feature;
 
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Config;
 use BinaryTorch\LaRecipe\Tests\TestCase;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Gate;
 
 class ShowDocumentationTest extends TestCase
 {
@@ -26,7 +26,7 @@ class ShowDocumentationTest extends TestCase
 
         // set auth to false
         Config::set('larecipe.settings.auth', false);
-        
+
         // guest can view foo page
         $this->get('/docs/1.0')
             ->assertViewHasAll([
@@ -36,7 +36,7 @@ class ShowDocumentationTest extends TestCase
                 'currentVersion',
                 'versions',
                 'currentSection',
-                'canonical'
+                'canonical',
             ])
             ->assertSee('<h1>Foo</h1>')
             ->assertSee('Get Started')
@@ -52,7 +52,6 @@ class ShowDocumentationTest extends TestCase
         Config::set('larecipe.docs.landing', 'foo');
         Config::set('larecipe.versions.published', ['1.0']);
 
-        
         // guest can view foo page
         $this->get('/docs/2.0/foo')
             ->assertRedirect('/docs/1.0/foo')
@@ -66,7 +65,6 @@ class ShowDocumentationTest extends TestCase
         Config::set('larecipe.docs.path', 'tests/views/docs');
         Config::set('larecipe.docs.landing', 'foo');
 
-        
         // guest can view foo page
         $this->get('/docs/1.0/bar')
             ->assertStatus(404);
@@ -83,7 +81,7 @@ class ShowDocumentationTest extends TestCase
     /** @test */
     public function only_authorized_users_can_access_viewLarecipe_gate_is_defined()
     {
-        Gate::define('viewLarecipe', function($user, $documentation) {
+        Gate::define('viewLarecipe', function ($user, $documentation) {
             return false;
         });
 
