@@ -67,6 +67,9 @@ class LaRecipeServiceProvider extends ServiceProvider
             'larecipe_assets' => [
                 "{$publishablePath}/assets/" => public_path('vendor/binarytorch/larecipe/assets'),
             ],
+            'larecipe_views' => [
+                __DIR__.'/../resources/views' => resource_path('views/vendor/larecipe'),
+            ],
         ];
 
         foreach ($publishable as $group => $paths) {

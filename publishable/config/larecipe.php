@@ -19,6 +19,10 @@ return [
         'landing' => 'overview',
     ],
 
+    'docblocks'   => [
+        '\Shin\Emotion\Traits\Emotional' => 'emotional'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Documentation Versions

@@ -7,6 +7,13 @@ use BinaryTorch\LaRecipe\Models\Documentation;
 use Illuminate\Database\Eloquent\Concerns\HasAttributes;
 use BinaryTorch\LaRecipe\Traits\HasDocumentationAttributes;
 
+/**
+ * Class DocumentationRepository
+ *
+ * Test
+ *
+ * @package BinaryTorch\LaRecipe
+ */
 class DocumentationRepository
 {
     use HasAttributes, HasDocumentationAttributes;
@@ -34,6 +41,8 @@ class DocumentationRepository
     }
 
     /**
+     * Hello wooooorld
+     *
      * @param $version
      * @param $page
      *
