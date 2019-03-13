@@ -592,6 +592,11 @@ pre code {
   opacity: 1;
 }
 
+.form-control:-ms-input-placeholder {
+  color: #adb5bd;
+  opacity: 1;
+}
+
 .form-control::-ms-input-placeholder {
   color: #adb5bd;
   opacity: 1;
@@ -10422,6 +10427,68 @@ a.text-darker:hover, a.text-darker:focus {
   text-align: right;
 }
 
+div.code-toolbar {
+  position: relative;
+}
+
+div.code-toolbar > .toolbar {
+  position: absolute;
+  top: 0.3em;
+  right: 0.2em;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+div.code-toolbar:hover > .toolbar {
+  opacity: 1;
+}
+
+div.code-toolbar > .toolbar .toolbar-item {
+  display: inline-block;
+}
+
+div.code-toolbar > .toolbar a {
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none;
+  /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+  color: #bbb;
+  font-size: 0.8em;
+  padding: 0.25rem 0.5em;
+  background: #f5f2f0;
+  background: rgba(224, 224, 224, 0.2);
+  -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+}
+
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a:focus,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
 /*!
 
 =========================================================
@@ -12066,6 +12133,10 @@ label {
   color: #adb5bd;
 }
 
+.form-control:focus:-ms-input-placeholder {
+  color: #adb5bd;
+}
+
 .form-control:focus::-ms-input-placeholder {
   color: #adb5bd;
 }
@@ -12163,6 +12234,10 @@ textarea[resize="horizontal"] {
   color: #2dce89;
 }
 
+.has-success .form-control:-ms-input-placeholder {
+  color: #2dce89;
+}
+
 .has-success .form-control::-ms-input-placeholder {
   color: #2dce89;
 }
@@ -12186,6 +12261,10 @@ textarea[resize="horizontal"] {
 }
 
 .has-danger .form-control::-webkit-input-placeholder {
+  color: #fb6340;
+}
+
+.has-danger .form-control:-ms-input-placeholder {
   color: #fb6340;
 }
 
@@ -13956,6 +14035,21 @@ article figure {
 
 article h5 + figure {
   margin-top: 0;
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+  padding: 0.25rem 0.5em;
+}
+
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a:focus,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span:focus {
+  color: #fff;
 }
 
 .documentation .sidebar {
