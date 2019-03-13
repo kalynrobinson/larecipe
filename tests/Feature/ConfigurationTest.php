@@ -2,8 +2,8 @@
 
 namespace BinaryTorch\LaRecipe\Tests\Feature;
 
-use Illuminate\Support\Facades\Config;
 use BinaryTorch\LaRecipe\Tests\TestCase;
+use Illuminate\Support\Facades\Config;
 
 class ConfigurationTest extends TestCase
 {
@@ -120,7 +120,7 @@ class ConfigurationTest extends TestCase
         Config::set('larecipe.forum.enabled', false);
         $this->get('/docs/1.0')
             ->assertDontSee('disqus_thread');
-            
+
         Config::set('larecipe.forum.default', 'disqus');
         Config::set('larecipe.forum.enabled', true);
         Config::set('larecipe.forum.services.disqus.site_name', 'larecipe');
@@ -140,11 +140,11 @@ class ConfigurationTest extends TestCase
 
         Config::set('larecipe.nav', [
             [
-                'url' => 'NavLinkUrl',
+                'url'  => 'NavLinkUrl',
                 'text' => 'NavLinkConfig',
                 'icon' => 'NavLinkIcon',
-                'type' => 'NavLinkType'
-            ]
+                'type' => 'NavLinkType',
+            ],
         ]);
         $this->get('/docs/1.0')
             ->assertSee('NavLinkConfig')

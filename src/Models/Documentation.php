@@ -3,10 +3,10 @@
 namespace BinaryTorch\LaRecipe\Models;
 
 use BinaryTorch\LaRecipe\Cache;
-use Illuminate\Filesystem\Filesystem;
-use BinaryTorch\LaRecipe\Traits\Indexable;
 use BinaryTorch\LaRecipe\Traits\HasBladeParser;
 use BinaryTorch\LaRecipe\Traits\HasMarkdownParser;
+use BinaryTorch\LaRecipe\Traits\Indexable;
+use Illuminate\Filesystem\Filesystem;
 
 class Documentation
 {
@@ -29,7 +29,8 @@ class Documentation
     /**
      * Create a new documentation instance.
      *
-     * @param  Filesystem  $files
+     * @param Filesystem $files
+     *
      * @return void
      */
     public function __construct(Filesystem $files, Cache $cache)
@@ -41,12 +42,13 @@ class Documentation
     /**
      * Get the documentation index page.
      *
-     * @param  string  $version
+     * @param string $version
+     *
      * @return string
      */
     public function getIndex($version)
     {
-        return $this->cache->remember(function() use($version) {
+        return $this->cache->remember(function () use ($version) {
             $path = base_path(config('larecipe.docs.path').'/'.$version.'/index.md');
 
             if ($this->files->exists($path)) {
@@ -54,21 +56,20 @@ class Documentation
 
                 return $this->replaceLinks($version, $parsedContent);
             }
-
-            return null;
         }, 'larecipe.docs.'.$version.'.index');
     }
 
     /**
      * Get the given documentation page.
      *
-     * @param  string  $version
-     * @param  string  $page
+     * @param string $version
+     * @param string $page
+     *
      * @return string
      */
     public function get($version, $page, $data = [])
     {
-        return $this->cache->remember(function() use($version, $page, $data) {
+        return $this->cache->remember(function () use ($version, $page, $data) {
             $path = base_path(config('larecipe.docs.path').'/'.$version.'/'.$page.'.md');
 
             if ($this->files->exists($path)) {
@@ -78,16 +79,15 @@ class Documentation
 
                 return $this->renderBlade($parsedContent, $data);
             }
-
-            return null;
         }, 'larecipe.docs.'.$version.'.'.$page);
     }
 
     /**
      * Replace the version and route placeholders.
      *
-     * @param  string  $version
-     * @param  string  $content
+     * @param string $version
+     * @param string $content
+     *
      * @return string
      */
     public static function replaceLinks($version, $content)
@@ -102,8 +102,9 @@ class Documentation
     /**
      * Check if the given section exists.
      *
-     * @param  string  $version
-     * @param  string  $page
+     * @param string $version
+     * @param string $page
+     *
      * @return bool
      */
     public function sectionExists($version, $page)

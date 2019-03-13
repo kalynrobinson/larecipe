@@ -2,9 +2,9 @@
 
 namespace BinaryTorch\LaRecipe\Tests\Unit;
 
-use Illuminate\Support\Facades\Config;
-use BinaryTorch\LaRecipe\Tests\TestCase;
 use BinaryTorch\LaRecipe\DocumentationRepository;
+use BinaryTorch\LaRecipe\Tests\TestCase;
+use Illuminate\Support\Facades\Config;
 
 class DocumentationRepositoryTest extends TestCase
 {

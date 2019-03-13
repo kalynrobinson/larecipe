@@ -89,7 +89,7 @@ class GenerateDocumentationCommand extends Command
      */
     protected function createVersionDirectory($versionDirectory)
     {
-        if (! $this->filesystem->isDirectory($versionDirectory)) {
+        if (!$this->filesystem->isDirectory($versionDirectory)) {
             $this->filesystem->makeDirectory($versionDirectory, 0755, true);
 
             return true;
@@ -107,7 +107,7 @@ class GenerateDocumentationCommand extends Command
     {
         $indexPath = $versionDirectory.'/index.md';
 
-        if (! $this->filesystem->exists($indexPath)) {
+        if (!$this->filesystem->exists($indexPath)) {
             $content = $this->generateIndexContent($this->getStub('index'));
             $this->filesystem->put($indexPath, $content);
 
@@ -126,7 +126,7 @@ class GenerateDocumentationCommand extends Command
     {
         $landingPath = $versionDirectory.'/'.config('larecipe.docs.landing').'.md';
 
-        if (! $this->filesystem->exists($landingPath)) {
+        if (!$this->filesystem->exists($landingPath)) {
             $content = $this->generateLandingContent($this->getStub('landing'));
             $this->filesystem->put($landingPath, $content);
 
@@ -182,6 +182,7 @@ class GenerateDocumentationCommand extends Command
      * Get the stub file for the generator.
      *
      * @param $stub
+     *
      * @return string
      */
     protected function getStub($stub)

@@ -11,6 +11,7 @@ trait HasBladeParser
      *
      * @param  $content
      * @param  $data
+     *
      * @return string
      */
     public function renderBlade($content, $data = [])
@@ -26,11 +27,13 @@ trait HasBladeParser
             while (ob_get_level() > $obLevel) {
                 ob_end_clean();
             }
+
             throw $e;
         } catch (\Throwable $e) {
             while (ob_get_level() > $obLevel) {
                 ob_end_clean();
             }
+
             throw new \Exception($e);
         }
 
@@ -43,6 +46,7 @@ trait HasBladeParser
      * Compile blade content.
      *
      * @param  $content
+     *
      * @return string
      */
     public function compileBlade($content)

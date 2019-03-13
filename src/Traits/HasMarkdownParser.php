@@ -8,11 +8,13 @@ trait HasMarkdownParser
 {
     /**
      * @param $text
-     * @return null|string|string[]
+     *
      * @throws \Exception
+     *
+     * @return null|string|string[]
      */
     public function parse($text)
     {
-        return (new ParsedownExtra)->text($text);
+        return (new ParsedownExtra())->text($text);
     }
 }

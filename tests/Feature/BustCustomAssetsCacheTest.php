@@ -2,8 +2,8 @@
 
 namespace BinaryTorch\LaRecipe\Tests\Feature;
 
-use Illuminate\Support\Facades\Config;
 use BinaryTorch\LaRecipe\Tests\TestCase;
+use Illuminate\Support\Facades\Config;
 
 class BustCustomAssetsCacheTest extends TestCase
 {
@@ -20,8 +20,8 @@ class BustCustomAssetsCacheTest extends TestCase
         $customCssFile = 'veryUniqueCssCustomFile.css';
         $customJsFile = 'veryUniqueJsCustomFile.js';
 
-        Config::set('larecipe.ui.additional_css', [ "/js/{$customCssFile}" ]);
-        Config::set('larecipe.ui.additional_js', [ "/js/{$customJsFile}" ]);
+        Config::set('larecipe.ui.additional_css', ["/js/{$customCssFile}"]);
+        Config::set('larecipe.ui.additional_js', ["/js/{$customJsFile}"]);
 
         // guest can view foo page
         $this->get('/docs/1.0')

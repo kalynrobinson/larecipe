@@ -2,17 +2,15 @@
 
 namespace BinaryTorch\LaRecipe;
 
-use Symfony\Component\DomCrawler\Crawler;
 use BinaryTorch\LaRecipe\Models\Documentation;
-use Illuminate\Database\Eloquent\Concerns\HasAttributes;
 use BinaryTorch\LaRecipe\Traits\HasDocumentationAttributes;
+use Illuminate\Database\Eloquent\Concerns\HasAttributes;
+use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Class DocumentationRepository
+ * Class DocumentationRepository.
  *
  * Test
- *
- * @package BinaryTorch\LaRecipe
  */
 class DocumentationRepository
 {
@@ -41,7 +39,7 @@ class DocumentationRepository
     }
 
     /**
-     * Hello wooooorld
+     * Hello wooooorld.
      *
      * @param $version
      * @param $page
@@ -128,6 +126,7 @@ class DocumentationRepository
      * Check if the given version is in the published versions.
      *
      * @param $version
+     *
      * @return bool
      */
     public function isPublishedVersion($version)
@@ -139,11 +138,12 @@ class DocumentationRepository
      * Check if the given version is not in the published versions.
      *
      * @param $version
+     *
      * @return bool
      */
     public function isNotPublishedVersion($version)
     {
-        return ! $this->isPublishedVersion($version);
+        return !$this->isPublishedVersion($version);
     }
 
     /**
@@ -159,7 +159,8 @@ class DocumentationRepository
     /**
      * Dynamically retrieve attributes on the model.
      *
-     * @param  string  $key
+     * @param string $key
+     *
      * @return mixed
      */
     public function __get($key)
