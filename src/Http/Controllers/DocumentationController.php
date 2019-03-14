@@ -71,7 +71,7 @@ class DocumentationController extends Controller
             'title'          => $documentation->title,
             'index'          => $documentation->index,
             'content'        => $documentation->content,
-            'currentVersion' => $version,postgres
+            'currentVersion' => $version,
             'versions'       => $documentation->publishedVersions,
             'currentSection' => $documentation->currentSection,
             'canonical'      => $documentation->canonical,
