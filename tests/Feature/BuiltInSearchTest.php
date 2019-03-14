@@ -2,9 +2,9 @@
 
 namespace BinaryTorch\LaRecipe\Tests\Feature;
 
-use Illuminate\Support\Facades\Config;
-use BinaryTorch\LaRecipe\Tests\TestCase;
 use BinaryTorch\LaRecipe\Models\Documentation;
+use BinaryTorch\LaRecipe\Tests\TestCase;
+use Illuminate\Support\Facades\Config;
 
 class BuiltInSearchTest extends TestCase
 {
@@ -32,8 +32,8 @@ class BuiltInSearchTest extends TestCase
                 [
                     'path',
                     'title',
-                    'headings'
-                ]
+                    'headings',
+                ],
             ]);
 
         $this->assertTrue(true);

@@ -2,23 +2,26 @@
 
 namespace BinaryTorch\LaRecipe\Tests;
 
-use Illuminate\Support\Facades\Config;
 use BinaryTorch\LaRecipe\Facades\LaRecipe;
 use BinaryTorch\LaRecipe\LaRecipeServiceProvider;
+use Illuminate\Support\Facades\Config;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     public function setup()
     {
         parent::setup();
-        
-        $this->app->setBasePath(__DIR__ . '/../');
 
-        $this->app['router']->get('login', function () { return 'login'; })->name('login');
+        $this->app->setBasePath(__DIR__.'/../');
+
+        $this->app['router']->get('login', function () {
+            return 'login';
+        })->name('login');
     }
 
     /**
      * @param \Illuminate\Foundation\Application $app
+     *
      * @return array
      */
     protected function getPackageProviders($app)
@@ -45,8 +48,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
     }
 
     /**
-     * Load package alias
-     * @param  \Illuminate\Foundation\Application $app
+     * Load package alias.
+     *
+     * @param \Illuminate\Foundation\Application $app
+     *
      * @return array
      */
     protected function getPackageAliases($app)

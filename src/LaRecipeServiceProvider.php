@@ -2,10 +2,10 @@
 
 namespace BinaryTorch\LaRecipe;
 
+use BinaryTorch\LaRecipe\Commands\GenerateDocumentationCommand;
+use BinaryTorch\LaRecipe\Commands\InstallCommand;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use BinaryTorch\LaRecipe\Commands\InstallCommand;
-use BinaryTorch\LaRecipe\Commands\GenerateDocumentationCommand;
 
 class LaRecipeServiceProvider extends ServiceProvider
 {

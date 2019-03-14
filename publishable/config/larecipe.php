@@ -20,7 +20,7 @@ return [
     ],
 
     'docblocks'   => [
-        '\Shin\Emotion\Traits\Emotional' => 'emotional'
+        '\Shin\Emotion\Traits\Emotional' => 'emotional',
     ],
 
     /*
@@ -38,8 +38,8 @@ return [
     'versions'      => [
         'default'   => '1.0',
         'published' => [
-            '1.0'
-        ]
+            '1.0',
+        ],
     ],
 
     /*
@@ -58,14 +58,14 @@ return [
     */
 
     'settings' => [
-        'auth'  => false,
+        'auth'       => false,
         'auth_links' => [
             [
                 'name' => '',
-                'url' => '',
+                'url'  => '',
             ],
         ],
-        'ga_id' => ''
+        'ga_id' => '',
     ],
 
     /*
@@ -83,7 +83,7 @@ return [
 
     'cache'       => [
         'enabled' => false,
-        'period'  => 300
+        'period'  => 300,
     ],
 
     /*
@@ -104,13 +104,13 @@ return [
         'default'       => 'algolia',
         'engines'       => [
             'internal'  => [
-                'index' => ['h2', 'h3']
+                'index' => ['h2', 'h3'],
             ],
             'algolia'   => [
                 'key'   => '',
-                'index' => ''
-            ]
-        ]
+                'index' => '',
+            ],
+        ],
     ],
 
     /*
@@ -127,7 +127,7 @@ return [
 
     'repository'   => [
         'provider' => 'github',
-        'url'      => 'https://github.com/saleem-hadad/larecipe'
+        'url'      => 'https://github.com/saleem-hadad/larecipe',
     ],
 
     /*
@@ -154,23 +154,22 @@ return [
         'colors'         => [
             'primary'    => '#787AF6',
             'secondary'  => '#2b9cf2',
-            'selection'  => '#f4f5f7'
+            'selection'  => '#f4f5f7',
         ],
         'additional_css' => [
             //'css/custom.css',
         ],
         'additional_js'  => [
             //'js/custom.js',
-        ]
+        ],
     ],
-
 
     /*
     |--------------------------------------------------------------------------
     | Navigation
     |--------------------------------------------------------------------------
     |
-    | Here you can add links to the navbar. 
+    | Here you can add links to the navbar.
     | Link type defaults to "outline-primary". Icon and text are not required.
     |
     */
@@ -206,7 +205,7 @@ return [
             'url'         => '',
             'image'       => '',
             'description' => '',
-        ]
+        ],
     ],
 
    /*
@@ -228,7 +227,7 @@ return [
         'services'          => [
             'disqus'        => [
                 'site_name' => '', // yoursite.disqus.com
-            ]
-        ]
-    ]
+            ],
+        ],
+    ],
 ];
